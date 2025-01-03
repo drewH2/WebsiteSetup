@@ -1,0 +1,205 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Admin Dashboard</title>
+    <link rel="stylesheet" href="/adminDash.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css">
+</head>
+<body>
+    <div class="container">
+        <header>
+            <h1>Admin Dashboard</h1>
+        </header>
+        <div class="squares-container">
+                <div class="square" id="addDoctorSquare">
+                    <img src="/images/addDoctor.jpg" alt="Add Doctor">
+                    <p>Add Doctor</p>
+                </div>
+            <div class="square" id="manageSchedulesSquare">
+                <img src="/images/manageSchedules.jpg" alt="Manage Schedules">
+                <p>Manage Schedules</p>
+            </div>
+            <div class="square" id="deleteAppointments">
+
+                <img src="/images/deleteAppointment.png" alt="Delete Appointments">
+                <p>Delete Appointments</p> 
+    
+            </div>
+
+            <div class="square" id="searchPatient">
+
+                <img src="/images/searchPatient.png" alt="Search Patients">
+                <p>Search Patients</p>
+            </div>
+            <div class="square" id="resolvePatient">
+
+
+                <img src ="/images/Resolve.jpg" alt="resolvePatient">
+                <p>Resolve Patients</p>
+            </div>
+            
+        </div>
+      
+
+        <main>
+            <section id="addDoctorSection" class="tab-content">
+                <h2>Add Doctor</h2>
+                <form id="addDoctorForm">
+                    <div class="form-row">
+                        <div class="form-group">
+                            <label for="doctorName">Name:</label>
+                            <input type="text" id="doctorName" name="doctorName" required>
+                        </div>
+                        <div class="form-group">
+                            <label for="doctorSpecialty">Specialty:</label>
+                            <select id="doctorSpecialty" name="doctorSpecialty" required></select>
+                        </div>
+                    </div>
+                    <button type="submit">Add Doctor</button>
+                </form>
+            </section>
+            <section id="manageSchedulesSection" class="tab-content hidden">
+                <h2 id="headerChange">Manage Schedules</h2>
+                <div class="settings">
+                    <i class="fas fa-cog" id="settingsIcon"></i>
+                    <div class="dropdown" id="settingsDropdown">
+                        <label for="dateSelectionMode">Date Selection Mode:</label>
+                        <select id="dateSelectionMode">
+                            <option value="fromToDate">From/To Date</option>
+                            <option value="selectMultipleDates">Select Multiple Dates</option>
+                            <option id="lastOption" value="selectDaysOfWeek">Select Days Of Week</option>
+                        </select>
+                   
+                    
+                    </div>
+                    <div class="weekendCont">
+                        <label for="excludeWeekends">Exclude Weekends</label>
+                        <input type="checkbox" id="excludeWeekends" checked="true">
+                    </div>
+                   
+                    <div class="form-group status-container">
+                        <label id="statusLabel" for="status">Status:</label>
+                        <select id="status" name="status">
+                            <option value="publish">Publish</option>
+                            <option value="draft">Draft</option>
+                        </select>
+                    </div>
+                </div>
+                
+                <form id="manageSchedulesForm">
+                    <div class="form-row">
+                        <div class="form-group">
+                            <label for="doctorSelect">Select Doctor:</label>
+                            <select id="doctorSelect" name="doctorSelect" required></select>
+                        </div>
+                        <div class="form-group">
+                            <label for="doctorSpecialties">Specialty:</label>
+                            <select id="doctorSpecialties" name="doctorSpecialties" required>
+                                <option value="all">All</option>
+                            </select>
+                        </div>
+                    </div>
+                    <div id="dateSelectionFields">
+                        <div id="fromToDateFields">
+                            <div class="form-row">
+                                <div class="form-group">
+                                    <label for="scheduleFromDate">From Date:</label>
+                                    <input type="date" id="scheduleFromDate" name="scheduleFromDate">
+                                </div>
+                                <div class="form-group">
+                                    <label for="scheduleToDate">To Date:</label>
+                                    <input type="date" id="scheduleToDate" name="scheduleToDate">
+                                </div>
+                            </div>
+                            <div id="excludeDatesContainer">
+                                <label for="excludeDateInput">Exclude Dates:</label>
+                                <input type="date" id="excludeDateInput">
+                                <button type="button" id="addExcludeDateButton">Add Exclude Date</button>
+                                <div id="excludeDatesList" class="dates-list"></div>
+                                <button type="button" id="clearExcludeDatesButton">Clear All</button>
+                            </div>
+                        </div>
+                        <div id="selectMultipleDatesFields" class="hidden">
+                            <div class="form-row">
+                                <div class="form-group">
+                                    <label for="selectedDates">Select Dates:</label>
+                                    <input type="date" id="selectedDates" name="selectedDates">
+                                    <button type="button" id="addDateButton">Add Date</button>
+                                    <div id="selectedDatesList" class="dates-list"></div>
+                                    <button type="button" id="clearDatesButton">Clear All Dates</button>
+                                </div>
+                            </div>
+                        </div>
+                        <div id="selectDaysOfWeekFields" class="hidden">
+                            <label for="dateRangeFrom">From:</label>
+                            <input type="date" id="dateRangeFrom" name="dateRangeFrom" class="form-control">
+                            <label for="dateRangeTo">To:</label>
+                            <input type="date" id="dateRangeTo" name="dateRangeTo" class="form-control">
+                            <div class="days-of-week">
+                                <label>Select Days of the Week:</label>
+                                <div class="day-checkbox">
+                                    <input type="checkbox" id="monday" name="daysOfWeek" value="Monday"> Monday
+                                </div>
+                                <div class="day-checkbox">
+                                    <input type="checkbox" id="tuesday" name="daysOfWeek" value="Tuesday"> Tuesday
+                                </div>
+                                <div class="day-checkbox">
+                                    <input type="checkbox" id="wednesday" name="daysOfWeek" value="Wednesday"> Wednesday
+                                </div>
+                                <div class="day-checkbox">
+                                    <input type="checkbox" id="thursday" name="daysOfWeek" value="Thursday"> Thursday
+                                </div>
+                                <div class="day-checkbox">
+                                    <input type="checkbox" id="friday" name="daysOfWeek" value="Friday"> Friday
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="form-row">
+                        <div class="form-group">
+                          
+                            <label for="scheduleFromTime">From Time:</label>
+                            <input type="time" id="scheduleFromTime" name="scheduleFromTime" class="" required>
+                     
+                        </div>
+                        <div class="form-group">
+                          
+                            <label for="scheduleToTime">To Time:</label>
+                            <input type="time" id="scheduleToTime" name="scheduleToTime" required>
+                        
+                        </div>
+                    </div>
+                    <div class="form-row">
+                        <div class="form-group">
+                            <div class="break-block">
+                            <label for="breakScheduleFromTime">Break From Time:</label>
+                            <input type="time" id="breakScheduleFromTime" name="breakScheduleFromTime" required>
+                        </div>
+                        </div>
+                        <div class="form-group">
+                            <div class="break-block">
+                            <label for="breakScheduleToTime">Break To Time:</label>
+                            <input type="time" id="breakScheduleToTime" name="breakScheduleToTime" required>
+                        </div>
+                        </div>
+                    </div>
+                    <div class="form-row">
+                        <div class="form-group">
+                            <div class="break-block">
+                            <label for="scheduleNumber">Gap:</label>
+                            <input type="number" id="gapNumber" name="scheduleNumber" required>
+                        </div>
+                        </div>
+                    </div>
+                    <button type="button" id="updateSched">Update Schedule</button>
+                </form>
+            </section>
+          
+
+        </main>
+    </div>
+    <script src="/adminDash.js"></script>
+</body>
+</html>

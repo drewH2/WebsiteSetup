@@ -1,0 +1,57 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Resolve Patient</title>
+     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css">
+    <link rel="stylesheet" href="/resolvePatient.css">
+</head>
+<body>
+    <div class="container">
+        <h1>Resolve Patient</h1>
+        
+        <div class="filter-section">
+            <label for="startDate">Start Date:</label>
+            <input type="date" id="startDate" name="startDate">
+            
+            <label for="endDate">End Date:</label>
+            <input type="date" id="endDate" name="endDate">
+            
+            <label for="doctor">Doctor:</label>
+            <select  id="doctor" name="doctor"></select>
+
+            <label for="fileNumber">File Number:</label>
+            <input type="number" id="fileNumber" name="fileNumber" placeholder="Enter file number">
+
+            <button id="filterButton" >Apply Filter</button>
+        </div>
+
+        <div class="tabs">
+            <button class="tab-button active" data-tab="deleted">Deleted Patients</button>
+            <button class="tab-button" data-tab="canceled">Canceled Patients</button>
+        </div>
+      
+        <div id="deletedPatients" class="tab-content active">
+            <div class="patient-list" id="deletedPatientsList">
+                <!-- Filtered list of deleted patients will be displayed here -->
+                
+            </div>
+        </div>
+     
+        <div id="canceledPatients" class="tab-content">
+            <div class="patient-list" id="canceledPatientsList">
+                
+                <!-- Filtered list of canceled patients will be displayed here -->
+            </div>
+        </div>
+        <div id="loadingSpinner" class="loading-spinner">
+            <div id="spinner-load" class="spinner hidden"></div>
+        </div>
+
+       
+    </div>
+  
+    <script src="/resolvePatient.js"></script>
+</body>
+</html>

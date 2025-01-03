@@ -1,0 +1,112 @@
+body {
+    display:flex;
+    flex-direction: column;
+    font-family: Arial, sans-serif;
+    background-color: #f4f4f4;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+   /* height: 200vh;*/
+    margin: 0;
+}
+
+h1 {
+    /*text-align: center;*/
+    color: #333;
+    margin-bottom: 20px;
+}
+
+form {
+ 
+    flex-direction: column;
+    background: white;
+    padding: 30px;
+    border-radius: 8px;
+    box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+    width: 100%;
+    max-width: 400px;
+}
+
+label {
+    display: block;
+    margin-bottom: 8px;
+    color: #555;
+}
+
+input[type="text"],
+input[type="tel"],
+input[type="date"],
+input[type="password"],
+select {
+    width: calc(100% - 20px);
+    padding: 10px;
+    margin-bottom: 20px;
+    border: 1px solid #ddd;
+    border-radius: 4px;
+    font-size: 16px;
+}
+
+button {
+
+    background-color:  #28549E;
+    color: white;
+    border: none;
+    padding: 10px;
+    width: 100%;
+    border-radius: 4px;
+    font-size: 16px;
+    cursor: pointer;
+
+}
+
+button:hover {
+    background-color: #1c3c73;
+}
+
+a {
+    display: block;
+    text-align: center;
+    margin-top: 10px;
+    color: #007bff;
+    text-decoration: none;
+}
+
+a:hover {
+    text-decoration: underline;
+}
+
+.phonecount{
+
+    width: 110px;
+
+}
+.container{
+
+    display:flex;
+   
+
+}
+.phoneinputcont{
+
+    margin-top: 26px;
+
+
+}
+.phoneinput{
+
+    width: 265px !important;
+
+}
+.buttons{
+
+    display:flex;
+    flex-direction:column;
+  
+
+
+}
+.buttons button{
+
+  margin-bottom: 10px;
+
+}

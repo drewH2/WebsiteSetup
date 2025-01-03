@@ -1,0 +1,251 @@
+body {
+    font-family: Arial, sans-serif;
+    background-color: #f4f4f4;
+    margin: 0;
+    padding: 20px;
+}
+
+.search-container {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    background-color: #fff;
+    padding: 15px;
+    border-radius: 8px;
+    box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+    margin-bottom: 20px;
+}
+
+.search-container input {
+    flex: 1;
+    margin-right: 10px;
+    padding: 8px;
+    border-radius: 4px;
+    border: 1px solid #ccc;
+    font-size: 16px;
+}
+.search-container select{
+
+        flex: 1;
+        margin-right: 10px;
+        padding: 8px;
+        border-radius: 4px;
+        border: 1px solid #ccc;
+        font-size: 16px;
+    
+}
+
+.search-container button {
+    padding: 10px 20px;
+    background-color: #007bff;
+    color: white;
+    border: none;
+    border-radius: 4px;
+    cursor: pointer;
+    font-size: 16px;
+}
+
+.search-container button:hover {
+    background-color: #0056b3;
+}
+
+.results-container {
+    background-color: #fff;
+    padding: 15px;
+    border-radius: 8px;
+    box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+}
+
+.patient-card {
+    padding: 15px;
+    border: 1px solid #ccc;
+    border-radius: 8px;
+    margin-bottom: 10px;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+}
+
+.patient-card h4 {
+    margin: 0;
+    font-size: 18px;
+}
+
+.patient-card p {
+    margin: 5px 0 0;
+    color: #666;
+}
+
+.patient-card button {
+    padding: 5px 10px;
+    background-color: transparent;
+    color: black;
+    border: 2px solid rgb(36, 86, 160);
+
+    border-radius: 10px;
+    cursor: pointer;
+    transition: 0.2s ease-in
+}
+
+.patient-card button:hover {
+    background-color: rgb(36, 86, 160);
+    color:white
+}
+input::-webkit-outer-spin-button,
+input::-webkit-inner-spin-button {
+-webkit-appearance: none;
+margin: 0;
+}
+/* Modal Styles */
+.modal {
+    display: none;
+    position: fixed;
+    z-index: 1000;
+    left: 0;
+    top: 0;
+    width: 100%;
+    height: 100%;
+    overflow: auto;
+    background-color: rgba(0, 0, 0, 0.5);
+    backdrop-filter: blur(5px);
+    justify-content: center;
+    align-items: center;
+    transition: opacity 0.3s ease-in-out;
+}
+
+.modal-content {
+    background-color: white;
+    padding: 20px;
+    border-radius: 10px;
+    width: 50%;
+    max-width: 600px;
+    animation: slideDown 0.5s ease;
+}
+.modal-body h3 {
+    text-align: center;
+    margin-bottom: 20px;
+}
+
+.modal-body label {
+    display: block;
+    font-weight: bold;
+    margin-top: 10px;
+}
+
+.modal-body input {
+    width: calc(100% - 20px);
+    padding: 10px;
+    margin-top: 5px;
+    border: 1px solid #ccc;
+    border-radius: 5px;
+    box-sizing: border-box;
+}
+.modal-body select{
+    width: calc(100% - 20px);
+    padding: 10px;
+    margin-top: 5px;
+    border: 1px solid #ccc;
+    border-radius: 5px;
+    box-sizing: border-box;
+
+}
+#editButton, #saveButton {
+    margin-top: 20px;
+    padding: 10px 15px;
+    border: none;
+    border-radius: 5px;
+    background-color: #007bff;
+    color: white;
+    cursor: pointer;
+}
+
+#saveButton {
+    background-color: #28a745;
+}
+
+#editButton.hidden, #saveButton.hidden {
+    display: none;
+}
+
+/* Close button style */
+.close-button {
+    color: #aaa;
+    float: right;
+    font-size: 28px;
+    font-weight: bold;
+}
+
+
+@keyframes slideDown {
+    from { transform: translateY(-50px); opacity: 0; }
+    to { transform: translateY(0); opacity: 1; }
+}
+
+.close-modal {
+    float: right;
+    font-size: 25px;
+    cursor: pointer;
+}
+
+.hidden {
+    display: none;
+}
+.loading-spinner {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    height: 100px; /* Adjust based on your layout */
+}
+
+.spinner {
+    border: 8px solid #f3f3f3;
+    border-top: 8px solid #007bff; /* Blue color */
+    border-radius: 50%;
+    width: 40px;
+    height: 40px;
+    animation: spin 1s linear infinite;
+}
+
+/* Hidden class to hide the spinner */
+
+
+@keyframes spin {
+    0% { transform: rotate(0deg); }
+    100% { transform: rotate(360deg); }
+}
+.appointments-container {
+    display: flex;
+    flex-direction: column;
+    gap: 10px;
+}
+
+.appointment-card {
+    border: 1px solid #ddd;
+    border-radius: 8px;
+    padding: 16px;
+    margin: 8px;
+    transition: transform 0.3s ease, box-shadow 0.3s ease;
+    /* Optionally add shadow for a more pronounced effect */
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+}
+
+.appointment-card:hover {
+    transform: scale(1.05); /* Zooms in the card slightly */
+    box-shadow: 0 8px 16px rgba(0, 0, 0, 0.2); /* Optional: adds a deeper shadow */
+}
+
+.appointment-card h4 {
+    margin: 0;
+    font-size: 18px;
+    color: #333;
+}
+
+.appointment-card p {
+    margin: 5px 0;
+    color: #555;
+}
+
+.modal-body {
+    max-height: 700px;
+    overflow-y: auto;
+}

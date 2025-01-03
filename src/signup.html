@@ -1,0 +1,56 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Sign Up</title>
+    <link rel="stylesheet" href="signlog.css">
+</head>
+<body>
+    <h1>Sign Up</h1>
+    <form id="signup-form">
+        <label for="firstName">First Name:</label>
+        <input type="text" id="firstName" name="firstName" required>
+
+        <label for="fatherName">Father Name:</label>
+        <input type="text" id="fatherName" name="fatherName" required>
+
+        <label for="lastName">Last Name:</label>
+        <input type="text" id="lastName" name="lastName" required>
+
+        <label for="dob">Date of Birth:</label>
+        <input type="date" id="dob" name="dob" required>
+
+        <label for="fileNumber">File Number:</label>
+        <input type="text" id="fileNumber" name="fileNumber" required>
+        <div class="container">
+<div class="phonecountrycont">
+        <label for="phoneNumber">Phone Number:</label>
+        <select class ="phonecount" id="countryCode" name="countryCode">
+            <!-- Add country options -->
+            <option value="+961">+961 (Lebanon)</option>
+            <option value="+1">+1 (USA)</option>
+            <option value="+44">+44 (UK)</option>
+            <option value="+91">+91 (India)</option>
+            <!-- Add more countries as needed -->
+        </select>
+    </div>
+    <div class="phoneinputcont">
+                <input class="phoneinput" type="tel" id="phoneNumber" name="phoneNumber" required>
+            </div>
+        </div>
+
+        <label for="nationality">Nationality:</label>
+        <select  id="nationality" name="nationality" required></select>
+
+        <label for="phenicsId">Phenics ID:</label>
+        <input type="text" id="phenicsId" name="phenicsId" required>
+
+        <label for="password">Password:</label>
+        <input type="password" id="password" name="password" required>
+
+        <button type="submit">Sign Up</button>
+    </form>
+    <script src="signup.js"></script>
+</body>
+</html>

@@ -1,0 +1,74 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Availability Page</title>
+    <link rel="stylesheet" href="/availability-style.css"> <!-- Include your CSS file -->
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css"> <!-- Font Awesome CSS -->
+</head>
+<body>
+    <h1 id="doctorHeader"></h1>
+    <h2 id="dateDisplay"></h2>
+   
+    <div id="admin-controls" class="hidden">
+        <button id="select-all" class ="hidden">Select All</button>
+        <button id="delete-selected" class="hidden">Delete Selected</button>
+        <button id="cancel-selected" class ="hidden">Cancel Selected</button>
+        <button id="add-urgent-button" class="hidden">Add Urgent</button> <!-- New "Add Urgent" button -->
+    </div>
+
+    <div id="admin-toggle-container" class="hidden">
+        <label class="toggle-label-text hidden" id="toggleLabel" for="adminToggle">Published</label>
+        <input type="checkbox" id="adminToggle" class="admin-toggle-switch hidden" checked >
+    </div>
+
+    <div id="appointments-container" class="appointments-container">
+        <!-- Appointments will be dynamically inserted here -->
+
+    </div>
+
+    <div id="add-appointment-modal" class="hiddenModal">
+      <div class="modal-content">
+          <span class="close-button">&times;</span>
+          <div class="modal-header">
+              <h2 id="edit-header">Add Appointment</h2>
+              <label>
+                  <input type="checkbox" id="new-patient-checkbox">
+                  New Patient?
+              </label>
+          </div>
+          <button type="button" id="edit-appointment-button" class="hidden">Edit</button>
+          <form id="add-appointment-form">
+              <label for="patient-name">First Name:</label>
+              <input type="text" id="patient-name" required>
+              <label for="last-name">Last Name:</label>
+              <input type="text" id="last-name" required>
+              <label for="dob">Date of Birth:</label>
+              <input type="date" id="dob" required>
+              <div id="file-number-group">
+                  <label for="file-number">File Number:</label>
+                  <input type="text" id="file-number" required>
+              </div>
+              <div id="phenics-id-group">
+                
+                  <label for="phenics-id">Phenics ID:</label>
+                  <input type="text" id="phenics-id" required>
+                  <div class="searching">
+                  <button type="button" id="search-button">Search</button>
+                  <input type="checkbox" id="alreadyAcc">A.A?
+                </div>
+              </div>
+              <label for="phone-number">Phone Number:</label>
+              <input type="text" id="phone-number" required>
+              <label for="countrySelect">Nationality:</label>
+              <select id="countrySelect" required>Lebanon</select>
+              
+              <button type="button" id="book-appointment-button">Book</button>
+          </form>
+      </div>
+  </div>
+  
+    <script src="/availability-page.js"></script> <!-- Include your JavaScript file -->
+</body>
+</html>

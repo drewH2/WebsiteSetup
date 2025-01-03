@@ -1,0 +1,38 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="/style.css">
+    <title>Karagheusian Appointments</title>
+</head>
+<body>
+    <div class="navbar">
+        <ul class="nav-list">
+            <li><a href="#">Home</a></li>
+            <li class="dropdown">
+                <a href="#" class="dropbtn">Account</a>
+                <div class="dropdown-content">
+                    <a href="#">Profile</a>
+                    <a href="#">Settings</a>
+                    <a href="#">Logout</a>
+                </div>
+            </li>
+        </ul>
+    </div>
+
+    <div class="container">
+        <h1 class="title">Search For Your Doctor</h1>
+        <div class="search-container">
+            <input type="text" id="doctorSearchInput" placeholder="Search Doctor Name...">
+            <button id="search-b" class="search-butt">Search</button>
+        </div>
+        <ul id="search-results"></ul>
+    </div>
+
+    <div id="doctorCardsContainer" class="doctor-cards-container"></div>
+    <button id="admin-button" class="hidden">Admin Only Button</button>
+
+    <script src="/index.js"></script>
+</body>
+</html>
